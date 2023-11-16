@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "name": "Serenity Heights",
+    "st_num": 1947,
+    "st_name": "Robson St       ",
+    "city": "Vancouver",
+    "province": "BC",
+    "zip": "V6B 3K9",
+    "phone": "604-661-2832"
+  },
+  {
+    "id": 2,
+    "name": "Renaissance Tower",
+    "st_num": 3971,
+    "st_name": "Robson St       ",
+    "city": "Vancouver",
+    "province": "BC",
+    "zip": "V6B 3K9",
+    "phone": "604-837-1118"
+  },
+  {
+    "id": 3,
+    "name": "Horizon View Residence",
+    "st_num": 3247,
+    "st_name": "Hastings Street ",
+    "city": "Vancouver",
+    "province": "BC",
+    "zip": "V6C 1B4",
+    "phone": "604-779-7763"
+  },
+  {
+    "id": 4,
+    "name": "Harmony Gardens ",
+    "st_num": 2828,
+    "st_name": "Tolmie St       ",
+    "city": "Vancouver",
+    "province": "BC",
+    "zip": "V6R 4C5",
+    "phone": "604-228-8950"
+  },
+  {
+    "id": 5,
+    "name": "Summit Plaza",
+    "st_num": 2563,
+    "st_name": "Tolmie St       ",
+    "city": "Vancouver",
+    "province": "BC",
+    "zip": "V6B 5A1",
+    "phone": "604-639-2684"
+  },
+  {
+    "id": 6,
+    "name": "Oasis Tower",
+    "st_num": 347,
+    "st_name": "Tanner Street   ",
+    "city": "Vancouver",
+    "province": "BC",
+    "zip": "V5R 2T4",
+    "phone": "604-433-7911"
+  },
+  {
+    "id": 7,
+    "name": "Legacy Manor",
+    "st_num": 2251,
+    "st_name": "Robson St       ",
+    "city": "Vancouver",
+    "province": "BC",
+    "zip": "V6B 3K9",
+    "phone": "604-632-5684"
+  },
+  {
+    "id": 8,
+    "name": "Unity Court",
+    "st_num": 3663,
+    "st_name": "Robson St       ",
+    "city": "Vancouver",
+    "province": "BC",
+    "zip": "V6B 3K9",
+    "phone": "604-992-3715"
+  },
+  {
+    "id": 9,
+    "name": "Zenith Heights",
+    "st_num": 3329,
+    "st_name": "Robson St       ",
+    "city": "Vancouver",
+    "province": "BC",
+    "zip": "V6B 3K9",
+    "phone": "604-642-4008"
+  },
+  {
+    "id": 10,
+    "name": "Tranquil Haven",
+    "st_num": 4610,
+    "st_name": "Tanner Street   ",
+    "city": "Vancouver",
+    "province": "BC",
+    "zip": "V5R 2T4",
+    "phone": "604-439-5295"
+  },
+  {
+    "id": 11,
+    "name": "luxury dreams",
+    "st_num": 2014,
+    "st_name": "St George Street",
+    "city": "Vancouver",
+    "province": "BC",
+    "zip": "V5T 1Z7",
+    "phone": "604-875-3713"
+  },
+  {
+    "id": 12,
+    "name": "emerald",
+    "st_num": 558,
+    "st_name": "St George Street",
+    "city": "Vancouver",
+    "province": "BC",
+    "zip": "V5T 1Z7",
+    "phone": "604-675-4471"
+  },
+  {
+    "id": 13,
+    "name": "dream heaven",
+    "st_num": 3699,
+    "st_name": "Hammarskjold Dr",
+    "city": "Burnaby",
+    "province": "BC",
+    "zip": "V5B 3C9",
+    "phone": "604-450-3498"
+  },
+  {
+    "id": 14,
+    "name": "happy homes",
+    "st_num": 431,
+    "st_name": "Hammarskjold Dr",
+    "city": "Burnaby",
+    "province": "BC",
+    "zip": "V5B 3C9",
+    "phone": "604-297-0399"
+  },
+  {
+    "id": 15,
+    "name": "happy dreams",
+    "st_num": 4496,
+    "st_name": "Lake City Way  ",
+    "city": "Burnaby",
+    "province": "BC",
+    "zip": "V5A 2Z6",
+    "phone": "778-866-8892"
+  },
+  {
+    "id": 16,
+    "name": "imperial homes",
+    "st_num": 3152,
+    "st_name": "Hammarskjold Dr",
+    "city": "Burnaby",
+    "province": "BC",
+    "zip": "V5B 3C9",
+    "phone": "604-296-8217"
+  },
+  {
+    "id": 17,
+    "name": "safehouse heights",
+    "st_num": 2241,
+    "st_name": "Lake City Way  ",
+    "city": "Burnaby",
+    "province": "BC",
+    "zip": "V5A 2Z6",
+    "phone": "778-554-3608"
+  },
+  {
+    "id": 18,
+    "name": "Gloria heights",
+    "st_num": 4968,
+    "st_name": "James Street   ",
+    "city": "Burnaby",
+    "province": "BC",
+    "zip": "V5G 4W7",
+    "phone": "604-830-4915"
+  },
+  {
+    "id": 19,
+    "name": "flora dreams",
+    "st_num": 675,
+    "st_name": "Lake City Way  ",
+    "city": "Burnaby",
+    "province": "BC",
+    "zip": "V5A 2Z6",
+    "phone": "604-803-3413"
+  },
+  {
+    "id": 20,
+    "name": "triangle heights",
+    "st_num": 2315,
+    "st_name": "James Street   ",
+    "city": "Burnaby",
+    "province": "BC",
+    "zip": "V5G 4W7",
+    "phone": "604-968-2398"
+  },
+  {
+    "id": 21,
+    "name": "urban heights",
+    "st_num": 4508,
+    "st_name": "Hammarskjold Dr",
+    "city": "Burnaby",
+    "province": "BC",
+    "zip": "V5B 3C9",
+    "phone": "604-320-8384"
+  },
+  {
+    "id": 22,
+    "name": "new view",
+    "st_num": 3273,
+    "st_name": "Hammarskjold Dr",
+    "city": "Burnaby",
+    "province": "BC",
+    "zip": "V5B 3C9",
+    "phone": "604-205-0396"
+  },
+  {
+    "id": 23,
+    "name": "monarch height",
+    "st_num": 2645,
+    "st_name": "Hammarskjold Dr",
+    "city": "Burnaby",
+    "province": "BC",
+    "zip": "V5B 3C9",
+    "phone": "604-570-1203"
+  },
+  {
+    "id": 24,
+    "name": "gala stone",
+    "st_num": 3504,
+    "st_name": "Hammarskjold Dr",
+    "city": "Burnaby",
+    "province": "BC",
+    "zip": "V5B 3C9",
+    "phone": "604-473-8544"
+  },
+  {
+    "id": 25,
+    "name": "urban street",
+    "st_num": 4972,
+    "st_name": "Quayside Dr ",
+    "city": "New Westminster",
+    "province": "BC",
+    "zip": "V3M 6A1",
+    "phone": "604-551-4932"
+  },
+  {
+    "id": 26,
+    "name": "happy villege",
+    "st_num": 3075,
+    "st_name": "Sixth Street",
+    "city": "New Westminster",
+    "province": "BC",
+    "zip": "V3L 3C1",
+    "phone": "604-202-9724"
+  },
+  {
+    "id": 27,
+    "name": "evergreen",
+    "st_num": 2084,
+    "st_name": "Sixth Street",
+    "city": "New Westminster",
+    "province": "BC",
+    "zip": "V3L 3C1",
+    "phone": "604-520-5271"
+  },
+  {
+    "id": 28,
+    "name": "golden oak",
+    "st_num": 554,
+    "st_name": "Royal Avenue",
+    "city": "New Westminster",
+    "province": "BC",
+    "zip": "V3L 5H1",
+    "phone": "604-518-8535"
+  },
+  {
+    "id": 29,
+    "name": "green park",
+    "st_num": 3977,
+    "st_name": "Royal Avenue",
+    "city": "New Westminster",
+    "province": "BC",
+    "zip": "V3L 5H1",
+    "phone": "604-636-2333"
+  },
+  {
+    "id": 30,
+    "name": "oak and stone",
+    "st_num": 2072,
+    "st_name": "Royal Avenue",
+    "city": "New Westminster",
+    "province": "BC",
+    "zip": "V3L 5H1",
+    "phone": "778-895-9635"
+  },
+  {
+    "id": 31,
+    "name": "true tradition",
+    "st_num": 4355,
+    "st_name": "Royal Avenue",
+    "city": "New Westminster",
+    "province": "BC",
+    "zip": "V3L 5H1",
+    "phone": "778-891-2118"
+  },
+  {
+    "id": 32,
+    "name": "golden touch",
+    "st_num": 4007,
+    "st_name": "Royal Avenue",
+    "city": "New Westminster",
+    "province": "BC",
+    "zip": "V3L 5H1",
+    "phone": "604-537-4939"
+  },
+  {
+    "id": 33,
+    "name": "wish heaven",
+    "st_num": 4201,
+    "st_name": "Quayside Dr ",
+    "city": "New Westminster",
+    "province": "BC",
+    "zip": "V3M 6A1",
+    "phone": "604-764-8537"
+  },
+  {
+    "id": 34,
+    "name": "iron home",
+    "st_num": 2119,
+    "st_name": "Royal Avenue",
+    "city": "New Westminster",
+    "province": "BC",
+    "zip": "V3L 5H1",
+    "phone": "778-892-6345"
+  },
+  {
+    "id": 35,
+    "name": "city sound",
+    "st_num": 456,
+    "st_name": "Sixth Street",
+    "city": "New Westminster",
+    "province": "BC",
+    "zip": "V3L 3C1",
+    "phone": "604-528-0006"
+  },
+  {
+    "id": 36,
+    "name": "bright stone",
+    "st_num": 4675,
+    "st_name": "Sixth Street",
+    "city": "New Westminster",
+    "province": "BC",
+    "zip": "V3L 3C1",
+    "phone": "604-777-0693"
+  },
+  {
+    "id": 37,
+    "name": "hills town",
+    "st_num": 2546,
+    "st_name": "Glover Road ",
+    "city": "Surrey",
+    "province": "BC",
+    "zip": "V3S 4C4",
+    "phone": "604-574-3493"
+  },
+  {
+    "id": 38,
+    "name": "wingspan",
+    "st_num": 454,
+    "st_name": "King George Hwy",
+    "city": "Surrey",
+    "province": "BC",
+    "zip": "V3W 4E3",
+    "phone": "604-591-6768"
+  },
+  {
+    "id": 39,
+    "name": "hill wing",
+    "st_num": 2590,
+    "st_name": "Glover Road ",
+    "city": "Surrey",
+    "province": "BC",
+    "zip": "V3W 4N6",
+    "phone": "604-562-3349"
+  },
+  {
+    "id": 40,
+    "name": "golden farm",
+    "st_num": 4512,
+    "st_name": "King George Hwy",
+    "city": "Surrey",
+    "province": "BC",
+    "zip": "V3W 4E3",
+    "phone": "604-501-7234"
+  },
+  {
+    "id": 41,
+    "name": "wish stone",
+    "st_num": 2076,
+    "st_name": "King George Hwy",
+    "city": "Surrey",
+    "province": "BC",
+    "zip": "V3W 4E3",
+    "phone": "604-594-5877"
+  },
+  {
+    "id": 42,
+    "name": "wiston",
+    "st_num": 3209,
+    "st_name": "King George Hwy",
+    "city": "Surrey",
+    "province": "BC",
+    "zip": "V3W 4E3",
+    "phone": "604-591-7760"
+  },
+  {
+    "id": 43,
+    "name": "emerald heights",
+    "st_num": 1013,
+    "st_name": "King George Hwy",
+    "city": "Surrey",
+    "province": "BC",
+    "zip": "V3W 4E3",
+    "phone": "604-502-9129"
+  },
+  {
+    "id": 44,
+    "name": "spartan dreams",
+    "st_num": 3943,
+    "st_name": "Holdom Avenue",
+    "city": "Surrey",
+    "province": "BC",
+    "zip": "V3T 4Y5",
+    "phone": "604-951-7220"
+  },
+  {
+    "id": 45,
+    "name": "greentree",
+    "st_num": 2353,
+    "st_name": "King George Hwy",
+    "city": "Surrey",
+    "province": "BC",
+    "zip": "V3W 4E3",
+    "phone": "604-543-5119"
+  },
+  {
+    "id": 46,
+    "name": "karma avenue",
+    "st_num": 2742,
+    "st_name": "Glover Road",
+    "city": "Surrey",
+    "province": "BC",
+    "zip": "V3T 1Y8",
+    "phone": "604-634-2265"
+  },
+  {
+    "id": 47,
+    "name": "cosmos housing",
+    "st_num": 731,
+    "st_name": "Glover Road",
+    "city": "Surrey",
+    "province": "BC",
+    "zip": "V3W 4N6",
+    "phone": "604-635-3465"
+  },
+  {
+    "id": 48,
+    "name": "oregano height",
+    "st_num": 994,
+    "st_name": "King George Hwy",
+    "city": "Surrey",
+    "province": "BC",
+    "zip": "V3W 4E3",
+    "phone": "604-597-0919"
+  },
+  {
+    "id": 49,
+    "name": "spartan land",
+    "st_num": 135,
+    "st_name": "Jade St",
+    "city": "Richmond",
+    "province": "BC",
+    "zip": "V7E 2E4",
+    "phone": "604-274-3801"
+  },
+  {
+    "id": 50,
+    "name": "freedom flora",
+    "st_num": 4205,
+    "st_name": "Jade St",
+    "city": "Richmond",
+    "province": "BC",
+    "zip": "V7E 2E4",
+    "phone": "604-272-9829"
+  },
+  {
+    "id": 51,
+    "name": "escort avenue",
+    "st_num": 1404,
+    "st_name": "Jade St",
+    "city": "Richmond",
+    "province": "BC",
+    "zip": "V7E 2E4",
+    "phone": "604-272-9404"
+  },
+  {
+    "id": 52,
+    "name": "blue stone",
+    "st_num": 1326,
+    "st_name": "No. 3 Road",
+    "city": "Richmond",
+    "province": "BC",
+    "zip": "V6X 2B8",
+    "phone": "604-295-8039"
+  },
+  {
+    "id": 53,
+    "name": "grey stone",
+    "st_num": 2768,
+    "st_name": "Tolmie St",
+    "city": "Richmond",
+    "province": "BC",
+    "zip": "V6X 2W7",
+    "phone": "604-288-6374"
+  },
+  {
+    "id": 54,
+    "name": "freedom fly",
+    "st_num": 1260,
+    "st_name": "Jade St",
+    "city": "Richmond",
+    "province": "BC",
+    "zip": "V7E 2E4",
+    "phone": "604-448-6887"
+  },
+  {
+    "id": 55,
+    "name": "moxa heights",
+    "st_num": 738,
+    "st_name": "No. 3 Road",
+    "city": "Richmond",
+    "province": "BC",
+    "zip": "V6X 2B8",
+    "phone": "604-821-9511"
+  },
+  {
+    "id": 56,
+    "name": "dream max",
+    "st_num": 2480,
+    "st_name": "No. 3 Road",
+    "city": "Richmond",
+    "province": "BC",
+    "zip": "V6X 2B8",
+    "phone": "604-207-9820"
+  },
+  {
+    "id": 57,
+    "name": "build dream",
+    "st_num": 824,
+    "st_name": "Jade St",
+    "city": "Richmond",
+    "province": "BC",
+    "zip": "V7E 2E4",
+    "phone": "604-274-0496"
+  },
+  {
+    "id": 58,
+    "name": "blue stone",
+    "st_num": 1345,
+    "st_name": "No. 3 Road",
+    "city": "Richmond",
+    "province": "BC",
+    "zip": "V6X 2B8",
+    "phone": "604-207-8294"
+  },
+  {
+    "id": 59,
+    "name": "grey stone",
+    "st_num": 2543,
+    "st_name": "No. 3 Road",
+    "city": "Richmond",
+    "province": "BC",
+    "zip": "V6X 2B8",
+    "phone": "604-270-0175"
+  },
+  {
+    "id": 60,
+    "name": "silver line ",
+    "st_num": 184,
+    "st_name": "Jade St",
+    "city": "Richmond",
+    "province": "BC",
+    "zip": "V7E 2E4",
+    "phone": "604-271-1607"
+  }
+]
