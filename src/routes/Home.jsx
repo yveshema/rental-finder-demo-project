@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { nanoid } from "nanoid";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         <Link to="listings/1">Listing 1</Link>
       </p>
       <p>
-        <Link to="listings/new">Create Listing</Link>
+        <Link to={`/listings/${nanoid()}/edit`}>Create Listing</Link>
       </p>
       <p>
         <Link to="vancouver">Vancouver Listings</Link>
