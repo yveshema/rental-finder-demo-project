@@ -1,4 +1,29 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+.input-control,
+.dialog-box,
+.btn-group {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  margin: 1rem auto;
+}
+
+.btn-group button {
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: rgba(50, 200, 200);
+}
+
+input,
+button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+}
+
+fieldset {
+  margin: 1.5rem auto;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
