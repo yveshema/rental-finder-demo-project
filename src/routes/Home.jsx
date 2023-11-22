@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import { Link } from "react-router-dom";
+import { nanoid } from "nanoid";
 
 export default function Home() {
   return (

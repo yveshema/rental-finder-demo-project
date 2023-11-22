@@ -1,5 +1,6 @@
 import { init } from "../fixtures/sample_listings";
 import { normalize } from "../utils/functions";
+import { Address, Specs } from "../utils/classes";
 
 import { Address, Specs } from "../utils/classes";
 
@@ -25,6 +26,7 @@ export const deleteListing = (id) => {
 };
 
 export const createListing = (data) => {
+
   //implement creating a listing
   const listing = {
     ...data,
