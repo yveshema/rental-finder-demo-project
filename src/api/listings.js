@@ -45,7 +45,7 @@ export const createListing = (data) => {
     ),
   };
 
-  if (!LISTINGS.find((items) => String(items.id) === listing.id)) {
+  if (!LISTINGS.find((item) => String(item.id) === listing.id)) {
     LISTINGS.unshift(listing);
   } else {
     LISTINGS = LISTINGS.map((item) => {

@@ -63,6 +63,7 @@ export default function useForm(listing = null) {
       name,
       description,
       address,
+      contact,
       specs,
       utilities,
       features,
