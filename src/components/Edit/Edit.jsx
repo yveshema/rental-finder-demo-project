@@ -1,39 +1,37 @@
 import { createContext } from "react";
-import { Form, useLoaderData, redirect, useParams } from "react-router-dom";
-
-import Contact from "./Contact";
-import GeneralInfo from "./GeneralInfo";
-import Draft from "./Draft";
-import AdditionalInfo from "./AdditionalInfo";
-import Specs from "./Specs";
+import { useLoaderData, redirect, useParams } from "react-router-dom";
 
 import useForm from "./useForm";
+export const FormContext = createContext();
+
 import { createListing } from "../../api/listings";
 
-export const action = async ({ request, params }) => {
-  const formData = await request.json();
+import GeneralInfo from "./GeneralInfo";
+import Contact from "./Contact";
+import Specs from "./Specs";
+import AdditionalInfo from "./AdditionalInfo";
+
+export const action = async ({ request }) => {
+  const formData = request.json();
+  console.log(formData);
   createListing(formData);
   return redirect("/");
 };
 
-export const FormContext = createContext();
-
 export default function Edit() {
   const { listing } = useLoaderData();
-  const { id } = useParams();
   const state = useForm(listing);
   const { onSubmit } = state;
+  const { id } = useParams();
 
   return (
     <FormContext.Provider value={state}>
       <div>
-        <h2>Create/Edit Listing Form</h2>
         <form onSubmit={(e) => onSubmit(e, id)}>
           <GeneralInfo />
-          <Specs />
           <Contact />
+          <Specs />
           <AdditionalInfo />
-
           <div className="input-control">
             <button type="submit">Submit</button>
           </div>
@@ -42,3 +40,4 @@ export default function Edit() {
     </FormContext.Provider>
   );
 }
+

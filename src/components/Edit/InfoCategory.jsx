@@ -1,5 +1,4 @@
-import { useState, useContext } from "react";
-
+import { useContext, useState } from "react";
 import { FormContext } from "./Edit";
 
 export default function InfoCategory({ category }) {
@@ -7,12 +6,14 @@ export default function InfoCategory({ category }) {
   const [option, setOption] = useState("unit");
   const { data, patch } = useContext(FormContext);
 
-  const handleAdd = () => {
+  const onAdd = () => {
     switch (category) {
       case "features": {
         const features = data.features ? { ...data.features } : {};
-        const values = features[option] ? [...features[option]] : [];
-        values.push(input);
+        if (!features[option]) {
+          features[option] = [];
+        }
+        features[option].push(input);
         patch(category, features);
         break;
       }
@@ -29,9 +30,9 @@ export default function InfoCategory({ category }) {
   return (
     <div className="input-control">
       <input
-        type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        type="text"
       />
       {category === "features" && (
         <select value={option} onChange={(e) => setOption(e.target.value)}>
@@ -41,9 +42,10 @@ export default function InfoCategory({ category }) {
           <option value="other">Other</option>
         </select>
       )}
-      <button type="button" onClick={handleAdd}>
+      <button type="button" onClick={onAdd}>
         Add
       </button>
     </div>
   );
 }
+

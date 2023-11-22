@@ -115,8 +115,7 @@ export default function Listing() {
           </AccordionDetails>
         </Accordion>
 
-        {/* Utilities */}
-        {listing.utilities?.length > 0 && (
+        {listing.utilities.length > 0 && (
           <ListingSection name="Utilities" data={listing.utilities} />
         )}
 

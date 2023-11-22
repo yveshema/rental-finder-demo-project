@@ -1,15 +1,8 @@
 import { useState } from "react";
+
 import { useSubmit } from "react-router-dom";
 
 import { Address, Specs } from "../../utils/classes";
-
-const DEFAULT_VALUES = {
-  beds: 1,
-  baths: 1,
-  floor: 320,
-  type: "apartment",
-  province: "B.C",
-};
 
 const flatten = (data) => {
   return {
@@ -20,8 +13,16 @@ const flatten = (data) => {
   };
 };
 
+const DEFAULT_DATA = {
+  beds: 1,
+  baths: 1,
+  floor: 320,
+  type: "apartment",
+  province: "B.C",
+};
+
 export default function useForm(listing = null) {
-  const [data, setData] = useState(listing || DEFAULT_VALUES);
+  const [data, setData] = useState(listing || DEFAULT_DATA);
   const submit = useSubmit();
 
   const handleChange = (e) => {
@@ -48,9 +49,7 @@ export default function useForm(listing = null) {
       data.province,
       data.zip,
     );
-
     const specs = new Specs(data.beds, data.baths, data.floor, data.type);
-
     const contact = {
       email: data.email,
       phone: data.phone,
@@ -68,7 +67,6 @@ export default function useForm(listing = null) {
       utilities,
       features,
       policies,
-      contact,
       management,
     };
 
@@ -86,3 +84,4 @@ export default function useForm(listing = null) {
     onSubmit,
   };
 }
+

@@ -7,8 +7,7 @@ import Listing, {
   loader as listingLoader,
   action as deleteAction,
 } from "../routes/Listing";
-// import ListingForm from "../routes/ListingForm";
-import Edit, { action as editAction } from "../components/Edit";
+import Edit, { action as editAction } from '../components/Edit';
 
 export const config = (
   <Route element={<Layout />}>
@@ -17,12 +16,10 @@ export const config = (
       <Route path=":city?/listings">
         <Route index element={<Listings />} loader={listingsLoader} />
         <Route path=":id" element={<Listing />} loader={listingLoader} />
-        <Route
-          path=":id/edit"
-          element={<Edit />}
-          loader={listingLoader}
-          action={editAction}
-        />
+        <Route path=":id/edit" 
+          element={<Edit />} 
+          loader={listingLoader} 
+          action={editAction} />
         <Route path=":id/delete" action={deleteAction} />
       </Route>
     </Route>

@@ -1,11 +1,8 @@
 import { useContext } from "react";
-
 import { FormContext } from "./Edit";
 
 export default function Specs() {
   const { data, handleChange } = useContext(FormContext);
-
-  const listingTypes = ["apartment", "townhouse", "condo"];
 
   return (
     <fieldset>
@@ -15,7 +12,7 @@ export default function Specs() {
         <input
           id="beds"
           type="number"
-          value={data.beds || 1}
+          value={data.beds || ""}
           onChange={handleChange}
         />
       </div>
@@ -24,7 +21,7 @@ export default function Specs() {
         <input
           id="baths"
           type="number"
-          value={data.baths || 1}
+          value={data.baths || ""}
           onChange={handleChange}
         />
       </div>
@@ -33,24 +30,23 @@ export default function Specs() {
         <input
           id="floor"
           type="number"
-          value={data.floor || 320}
+          value={data.floor || ""}
           onChange={handleChange}
         />
       </div>
       <div className="input-control">
-        <label htmlFor="type">Listing Type:</label>
+        <label htmlFor="type">Listing type:</label>
         <select
           id="type"
           value={data.type || "apartment"}
           onChange={handleChange}
         >
-          {listingTypes.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
+          <option value="apartment">Apartment</option>
+          <option value="townhouse">Townhouse</option>
+          <option value="condo">Condo</option>
         </select>
       </div>
     </fieldset>
   );
 }
+

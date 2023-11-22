@@ -2,6 +2,8 @@ import { init } from "../fixtures/sample_listings";
 import { normalize } from "../utils/functions";
 import { Address, Specs } from "../utils/classes";
 
+import { Address, Specs } from "../utils/classes";
+
 let LISTINGS = [...init()];
 
 export const getListings = (city = null) => {
@@ -24,20 +26,37 @@ export const deleteListing = (id) => {
 };
 
 export const createListing = (data) => {
+
+  //implement creating a listing
   const listing = {
     ...data,
-    image: "https://source.unsplash.com/random?house",
-    verified: false,
+    image: !data.image && "https://source.unsplash.com/random?house",
+    verified: data.verified !== "undefined" ? data.verified : false,
     address: new Address(
-      data.streetNo,
-      data.streetName,
-      data.city,
-      data.province,
-      data.zip,
+      data.address.streetNo,
+      data.address.streetName,
+      data.address.city,
+      data.address.province,
+      data.address.zip,
     ),
-    specs: new Specs(data.beds, data.baths, data.floor, data.type),
+    specs: new Specs(
+      data.specs.beds,
+      data.specs.baths,
+      data.specs.floor,
+      data.specs.type,
+    ),
   };
 
-  LISTINGS.unshift(listing);
+  if (!LISTINGS.find((items) => String(items.id) === listing.id)) {
+    LISTINGS.unshift(listing);
+  } else {
+    LISTINGS = LISTINGS.map((item) => {
+      if (String(item.id) === String(listing.id)) {
+        return listing;
+      }
+      return item;
+    });
+  }
+
   return listing;
 };

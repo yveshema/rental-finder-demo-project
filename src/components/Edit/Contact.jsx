@@ -1,5 +1,4 @@
 import { useContext } from "react";
-
 import { FormContext } from "./Edit";
 
 export default function Contact() {
@@ -27,7 +26,7 @@ export default function Contact() {
         />
       </div>
       <div className="input-control">
-        <label htmlFor="phone">Phone:</label>
+        <label htmlFor="phone">Email:</label>
         <input
           id="phone"
           type="tel"

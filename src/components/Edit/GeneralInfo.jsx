@@ -1,5 +1,4 @@
 import { useContext } from "react";
-
 import { FormContext } from "./Edit";
 
 export default function GeneralInfo() {
@@ -43,7 +42,7 @@ export default function GeneralInfo() {
         <input
           id="zip"
           type="text"
-          placeholder="Z5Y 5H2"
+          placeholder="Y5Z 2H9"
           value={data.zip || ""}
           onChange={handleChange}
         />
@@ -61,12 +60,12 @@ export default function GeneralInfo() {
         <label htmlFor="province">Province:</label>
         <select
           id="province"
-          value={data.province || ""}
           onChange={handleChange}
         >
-          <option value="B.C">B.C</option>
+            <option value="B.C">B.C</option>
         </select>
       </div>
     </fieldset>
   );
 }
+
