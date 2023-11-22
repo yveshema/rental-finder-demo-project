@@ -17,10 +17,10 @@ export class Address {
 }
 
 export class Specs {
-  constructor(bdr, bth, flp, type) {
-    this.bdr = bdr;
-    this.bth = bth;
-    this.flp = flp;
+  constructor(beds, baths, floor, type) {
+    this.beds = beds;
+    this.baths = baths;
+    this.floor = floor;
     this.type = type;
   }
 }

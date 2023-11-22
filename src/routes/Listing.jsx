@@ -14,7 +14,7 @@ import {
   ListItemText,
   Button,
   Box,
-  Stack
+  Stack,
 } from "@mui/material";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -25,14 +25,14 @@ import { getListing, deleteListing } from "../api/listings";
 
 export async function loader({ params }) {
   const { id } = params;
-  const listing = getListing(+id);
+  const listing = getListing(id);
 
   return { listing };
 }
 
 export async function action({ params }) {
   const { id } = params;
-  deleteListing(+id);
+  deleteListing(id);
   return redirect("/listings");
 }
 
@@ -45,13 +45,13 @@ export default function Listing() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        height: "100%"
+        height: "100%",
       }}
     >
       <CardMedia
         component="div"
         sx={{
-          aspectRatio: "1.618"
+          aspectRatio: "1.618",
         }}
         image={`${listing.image}`}
       />
@@ -92,13 +92,13 @@ export default function Listing() {
               <ListItem>
                 <ListItemText
                   primary="Bedrooms"
-                  secondary={listing.specs.bdr}
+                  secondary={listing.specs.beds}
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="Bathrooms"
-                  secondary={listing.specs.bth}
+                  secondary={listing.specs.baths}
                 />
               </ListItem>
               <ListItem>
@@ -106,7 +106,7 @@ export default function Listing() {
                   primary="Unit size"
                   secondary={
                     <span>
-                      {listing.specs.flp} FT<sup>2</sup>
+                      {listing.specs.floor} FT<sup>2</sup>
                     </span>
                   }
                 />
@@ -115,7 +115,6 @@ export default function Listing() {
           </AccordionDetails>
         </Accordion>
 
-        {/* Utilities */}
         {listing.utilities.length > 0 && (
           <ListingSection name="Utilities" data={listing.utilities} />
         )}
