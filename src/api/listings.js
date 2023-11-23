@@ -33,7 +33,7 @@ export const createListing = (data) => {
     address: new Address(
       data.address.streetNo,
       data.address.streetName,
-      data.address.city,
+      normalize(data.address.city),
       data.address.province,
       data.address.zip,
     ),
