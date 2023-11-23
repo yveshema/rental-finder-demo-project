@@ -76,9 +76,9 @@ export default function Listing() {
           </Typography>
         </Stack>
         <Typography variant="body1" mt={4}>{`${listing.address}`}</Typography>
-        <Typography variant="body2" mt={4}>
+        <Typography variant="body2" mt={4} mb={4}>
           Checkout other listings in {"  "}
-          <Link to={`${listing.address.city}/listings`}>
+          <Link to={`/${listing.address.city}/listings`}>
             {listing.address.city}
           </Link>
         </Typography>
