@@ -55,12 +55,22 @@ export default function useForm(listing = null) {
       phone: data.phone,
     };
 
-    const { name, description, utilities, features, policies, management } =
-      data;
+    const {
+      name,
+      verified,
+      image,
+      description,
+      utilities,
+      features,
+      policies,
+      management,
+    } = data;
 
     const formData = {
       id,
       name,
+      verified,
+      image,
       description,
       address,
       contact,
