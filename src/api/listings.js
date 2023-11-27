@@ -1,5 +1,5 @@
 import { init } from "../fixtures/sample_listings";
-import { normalize } from "../utils/functions";
+import { normalize, getImage } from "../utils/functions";
 
 import { Address, Specs } from "../utils/classes";
 
@@ -26,23 +26,19 @@ export const deleteListing = (id) => {
 
 export const createListing = (data) => {
   //implement creating a listing
+  const image = getImage(data.type);
   const listing = {
     ...data,
-    image: !data.image && "https://source.unsplash.com/random?house",
+    image: !data.image && image.path,
     verified: data.verified !== "undefined" ? data.verified : false,
     address: new Address(
-      data.address.streetNo,
-      data.address.streetName,
-      normalize(data.address.city),
-      data.address.province,
-      data.address.zip,
+      data.streetNo,
+      data.streetName,
+      normalize(data.city),
+      data.province,
+      data.zip,
     ),
-    specs: new Specs(
-      data.specs.beds,
-      data.specs.baths,
-      data.specs.floor,
-      data.specs.type,
-    ),
+    specs: new Specs(data.beds, data.baths, data.floor, data.type),
   };
 
   if (!LISTINGS.find((item) => String(item.id) === listing.id)) {

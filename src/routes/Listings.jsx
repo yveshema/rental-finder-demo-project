@@ -1,4 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
+import { Box, Grid } from "@mui/material";
+import ListingCard from "../components/ListingCard";
 
 import { getListings } from "../api/listings";
 
@@ -12,29 +14,14 @@ export default function Listings() {
   const { listings } = useLoaderData();
 
   return (
-    <div>
-      <p>Listings Page</p>
-      <p>
-        <Link to="/listings/new">Create new listing</Link>
-      </p>
-      {listings.map((listing) => (
-        <div
-          key={listing.id}
-          style={{
-            margin: "2rem auto",
-            border: "1px solid",
-            padding: "0 1rem"
-          }}
-        >
-          <p>{listing.name}</p>
-          <p>
-            <Link to={`/${listing.city}/listings`}>{listing.city}</Link>
-          </p>
-          <p>
-            <Link to={`/listings/${listing.id}`}>Read more</Link>
-          </p>
-        </div>
-      ))}
-    </div>
+    <Box>
+      <Grid container spacing={4}>
+        {listings.map((listing) => (
+          <Grid item key={listing.id} xs={12} md={6}>
+            <ListingCard listing={listing} />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 }

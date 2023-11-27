@@ -53,7 +53,7 @@ export default function Listing() {
         sx={{
           aspectRatio: "1.618",
         }}
-        image={`${listing.image}`}
+        image={`/assets/${listing.image}`}
       />
       <CardContent>
         <Stack
