@@ -54,3 +54,31 @@ export const createListing = (data) => {
 
   return listing;
 };
+
+export const searchListings = (search) => {
+  const { city, params } = search;
+  let name, zip;
+  const listings = getListings(city);
+
+  if (params) {
+    name = params.get("name");
+    zip = params.get("zip");
+  }
+
+  if (name) {
+    return listings.filter((listing) => {
+      return (
+        listing.name.toLowerCase().includes(name.toLowerCase()) ||
+        listing.address.streetName.toLowerCase().includes(name.toLowerCase())
+      );
+    });
+  }
+
+  if (zip) {
+    return listings.filter((listing) => {
+      return listing.address.zip.toLowerCase().includes(zip.toLowerCase());
+    });
+  }
+
+  return [];
+};
