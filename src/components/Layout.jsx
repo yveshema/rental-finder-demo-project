@@ -5,7 +5,7 @@ import {
   Toolbar,
   Typography,
   Container,
-  CssBaseline
+  CssBaseline,
 } from "@mui/material";
 
 export default function Layout() {
@@ -14,7 +14,7 @@ export default function Layout() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        minHeight: "100vh"
+        minHeight: "100vh",
       }}
     >
       <CssBaseline />
@@ -25,7 +25,7 @@ export default function Layout() {
             to="/"
             style={{
               textDecoration: "none",
-              color: "#fff"
+              color: "#fff",
             }}
           >
             RentalFinder
@@ -35,22 +35,13 @@ export default function Layout() {
 
       {/* Main Area */}
       <main>
-        <Container minWidth="lg" sx={{ margin: "1em auto" }}>
+        <Container maxWidth="lg" sx={{ margin: "1em auto" }}>
           <Outlet />
         </Container>
       </main>
 
       {/* Footer */}
-      <Box
-        component="footer"
-        sx={{
-          padding: "1em",
-          background: "#555",
-          color: "#fff",
-          margin: "0",
-          marginTop: "auto"
-        }}
-      >
+      <Box component="footer" bgcolor="secondary.dark" mt="auto" p={2}>
         <Copyright />
       </Box>
     </Box>
@@ -59,9 +50,12 @@ export default function Layout() {
 
 function Copyright() {
   return (
-    <Typography color="inherit" align="center">
+    <Typography color="inherit" align="center" sx={{ color: "#fff" }}>
       {"Copyright "}
-      <span>&copy;</span> <Link to="/">rentalfinder</Link>{" "}
+      <span>&copy;</span>{" "}
+      <Link to="/" style={{ color: "#fff" }}>
+        rentalfinder
+      </Link>{" "}
       {new Date().getFullYear()}
     </Typography>
   );

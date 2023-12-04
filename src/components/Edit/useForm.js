@@ -42,39 +42,14 @@ export default function useForm(listing = null) {
   const onSubmit = (e, id) => {
     e.preventDefault();
 
-    const address = new Address(
-      data.streetNo,
-      data.streetName,
-      data.city,
-      data.province,
-      data.zip,
+    submit(
+      { ...data, id },
+      {
+        method: "post",
+        encType: "application/json",
+        action: `/listings/${id}/edit`,
+      },
     );
-    const specs = new Specs(data.beds, data.baths, data.floor, data.type);
-    const contact = {
-      email: data.email,
-      phone: data.phone,
-    };
-
-    const { name, description, utilities, features, policies, management } =
-      data;
-
-    const formData = {
-      id,
-      name,
-      description,
-      address,
-      specs,
-      utilities,
-      features,
-      policies,
-      management,
-    };
-
-    submit(formData, {
-      method: "post",
-      encType: "application/json",
-      action: `/listings/${id}/edit`,
-    });
   };
 
   return {

@@ -1,7 +1,5 @@
 import { init } from "../fixtures/sample_listings";
-import { normalize } from "../utils/functions";
-import { Address, Specs } from "../utils/classes";
-
+import { normalize, getImage } from "../utils/functions";
 import { Address, Specs } from "../utils/classes";
 
 let LISTINGS = [...init()];
@@ -28,26 +26,22 @@ export const deleteListing = (id) => {
 export const createListing = (data) => {
 
   //implement creating a listing
+  const image = getImage(data.type);
   const listing = {
     ...data,
-    image: !data.image && "https://source.unsplash.com/random?house",
+    image: !data.image && image.path,
     verified: data.verified !== "undefined" ? data.verified : false,
     address: new Address(
-      data.address.streetNo,
-      data.address.streetName,
-      data.address.city,
-      data.address.province,
-      data.address.zip,
+      data.streetNo,
+      data.streetName,
+      normalize(data.city),
+      data.province,
+      data.zip,
     ),
-    specs: new Specs(
-      data.specs.beds,
-      data.specs.baths,
-      data.specs.floor,
-      data.specs.type,
-    ),
+    specs: new Specs(data.beds, data.baths, data.floor, data.type),
   };
 
-  if (!LISTINGS.find((items) => String(items.id) === listing.id)) {
+  if (!LISTINGS.find((item) => String(item.id) === listing.id)) {
     LISTINGS.unshift(listing);
   } else {
     LISTINGS = LISTINGS.map((item) => {
@@ -59,4 +53,32 @@ export const createListing = (data) => {
   }
 
   return listing;
+};
+
+export const searchListings = (search) => {
+  const { city, params } = search;
+  let name, zip;
+  const listings = getListings(city);
+
+  if (params) {
+    name = params.get("name");
+    zip = params.get("zip");
+  }
+
+  if (name) {
+    return listings.filter((listing) => {
+      return (
+        listing.name.toLowerCase().includes(name.toLowerCase()) ||
+        listing.address.streetName.toLowerCase().includes(name.toLowerCase())
+      );
+    });
+  }
+
+  if (zip) {
+    return listings.filter((listing) => {
+      return listing.address.zip.toLowerCase().includes(zip.toLowerCase());
+    });
+  }
+
+  return [];
 };
