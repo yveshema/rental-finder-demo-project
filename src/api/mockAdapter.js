@@ -30,3 +30,38 @@ mock.onGet("/listings").reply((config) => {
     },
   ];
 });
+
+mock.onGet("/listing").reply((config) => {
+  const { id } = config;
+  const listing = getListing(id);
+
+  return [
+    200,
+    {
+      listing,
+    },
+  ];
+});
+
+mock.onDelete("/listings").reply((config) => {
+  const { id } = config;
+  deleteListing(id);
+  return [
+    200,
+    {
+      id,
+    },
+  ];
+});
+
+mock.onPost("/listings").reply((config) => {
+  const { data } = config;
+  const listing = createListing(JSON.parse(data));
+
+  return [
+    200,
+    {
+      listing,
+    },
+  ];
+});

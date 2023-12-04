@@ -4,7 +4,7 @@ import { useLoaderData, redirect, useParams } from "react-router-dom";
 import useForm from "./useForm";
 export const FormContext = createContext();
 
-import { createListing } from "../../api/listings";
+import { api } from "../../api/mockAdapter";
 
 import GeneralInfo from "./GeneralInfo";
 import Contact from "./Contact";
@@ -13,9 +13,9 @@ import AdditionalInfo from "./AdditionalInfo";
 
 export const action = async ({ request }) => {
   const formData = await request.json();
-  console.log(formData);
-  createListing(formData);
-  return redirect("/");
+  const response = await api.post("/listings", formData);
+  const { listing } = response.data;
+  return redirect(`/listings/${listing.id}`);
 };
 
 export default function Edit() {
@@ -40,4 +40,3 @@ export default function Edit() {
     </FormContext.Provider>
   );
 }
-

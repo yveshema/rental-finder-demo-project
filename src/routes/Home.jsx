@@ -1,21 +1,16 @@
-import { nanoid } from "nanoid";
-import { Link, useLoaderData, Form } from "react-router-dom";
+import { Link, useLoaderData, Form, useNavigation } from "react-router-dom";
+
 import { Container, Box, Typography } from "@mui/material";
-
-import { searchListings } from "../api/listings";
-
-export const loader = async ({ request, params }) => {
-  let listings = [];
-  const url = new URL(request.url);
-  const { city } = params;
-  if (url.searchParams.size > 0) {
-    listings = searchListings({ city, params: url.searchParams });
-  }
-  return { listings };
-};
 
 export default function Home() {
   const { listings } = useLoaderData();
+
+  const { state } = useNavigation();
+
+  if (state === "loading") {
+    return <progress style={{ width: "100vw" }} />;
+  }
+
   return (
     <Container>
       <Form>
@@ -32,7 +27,7 @@ export default function Home() {
         />
       </Form>
 
-      <Box mb={4} mt={4}>
+      <Box m={4}>
         <Typography>
           Use the search boxes to look up listings by name, street address or
           zip code.
@@ -42,9 +37,11 @@ export default function Home() {
       <Box>
         {listings.map((listing) => (
           <p>
-            <Link
-              to={`/listings/${listing.id}`}
-            >{`${listing.name}, ${listing.address}`}</Link>
+            <Link to={`/listings/${listing.id}`}>
+              {listing.name}, {listing.address.streetNo}{" "}
+              {listing.address.streetName}, {listing.address.city},{" "}
+              {listing.address.zip} {listing.address.province}
+            </Link>
           </p>
         ))}
       </Box>

@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import { Box, Grid } from "@mui/material";
 import ListingCard from "../components/ListingCard";
 
@@ -17,6 +17,12 @@ export async function loader({ request, params }) {
 
 export default function Listings() {
   const { listings } = useLoaderData();
+
+  const { state } = useNavigation();
+
+  if (state === "loading") {
+    return <progress style={{ width: "100vw" }} />;
+  }
 
   return (
     <Box>

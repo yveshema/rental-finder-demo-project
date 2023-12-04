@@ -22,7 +22,7 @@ const DEFAULT_DATA = {
 };
 
 export default function useForm(listing = null) {
-  const [data, setData] = useState(listing || DEFAULT_DATA);
+  const [data, setData] = useState(flatten(listing) || DEFAULT_DATA);
   const submit = useSubmit();
 
   const handleChange = (e) => {
@@ -59,4 +59,3 @@ export default function useForm(listing = null) {
     onSubmit,
   };
 }
-
