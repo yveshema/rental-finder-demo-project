@@ -12,7 +12,7 @@ import Specs from "./Specs";
 import AdditionalInfo from "./AdditionalInfo";
 
 export const action = async ({ request }) => {
-  const formData = request.json();
+  const formData = await request.json();
   console.log(formData);
   createListing(formData);
   return redirect("/");
