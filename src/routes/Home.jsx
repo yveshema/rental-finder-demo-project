@@ -21,6 +21,8 @@ export default function Home() {
       <Form>
         <input
           type="text"
+          size="30"
+          name="name"
           placeholder="Search by name or address"
           style={{
             border: "1px solid rgba(0, 0, 0, 0.1)",
