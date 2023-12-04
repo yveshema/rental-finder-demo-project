@@ -10,6 +10,8 @@
     "@fontsource/roboto": "5.0.8",
     "@mui/icons-material": "5.14.16",
     "@mui/material": "5.14.17",
+    "axios": "^1.6.2",
+    "axios-mock-adapter": "^1.22.0",
     "loader-utils": "3.2.1",
     "nanoid": "^5.0.3",
     "react": "18.2.0",

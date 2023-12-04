@@ -2,12 +2,17 @@ import { Link, useLoaderData } from "react-router-dom";
 import { Box, Grid } from "@mui/material";
 import ListingCard from "../components/ListingCard";
 
-import { getListings } from "../api/listings";
+// import { getListings } from "../api/listings";
+import { api } from "../api/mockAdapter";
 
 export async function loader({ request, params }) {
+  const url = new URL(request.url);
+  const searchParams = url.searchParams;
+  console.log(searchParams);
   const { city } = params;
-  const listings = getListings(city);
-  return { listings };
+  // const listings = getListings(city);
+  const response = await api.get("/listings", { city, params: searchParams });
+  return response.data;
 }
 
 export default function Listings() {

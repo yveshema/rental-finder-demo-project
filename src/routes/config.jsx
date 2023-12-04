@@ -12,7 +12,7 @@ import Edit, { action as editAction } from "../components/Edit";
 export const config = (
   <Route element={<Layout />}>
     <Route path="/">
-      <Route index element={<Home />} loader={homeLoader} />
+      <Route index element={<Home />} loader={listingsLoader} />
       <Route path=":city?/listings">
         <Route index element={<Listings />} loader={listingsLoader} />
         <Route path=":id" element={<Listing />} loader={listingLoader} />

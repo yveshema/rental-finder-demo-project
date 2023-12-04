@@ -58,7 +58,11 @@ const ListingCard = ({ listing }) => {
                 {listing.specs.floor} FT<sup>2</sup>
               </Typography>
             </Stack>
-            <Typography variant="caption">{`${listing.address}`}</Typography>
+            <Typography variant="caption">
+              {listing.address.streetNo} {listing.address.streetName},{" "}
+              {listing.address.city}, {listing.address.zip}{" "}
+              {listing.address.province}
+            </Typography>
           </CardContent>
         </CardMedia>
       </CardActionArea>
