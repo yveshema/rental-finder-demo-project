@@ -119,29 +119,29 @@ export default function Listing() {
           <ListingSection name="Utilities" data={listing.utilities} />
         )}
 
-        {listing.features.unit.length > 0 && (
+        {listing.features?.unit?.length > 0 && (
           <ListingSection name="Unit Features" data={listing.features.unit} />
         )}
 
-        {listing.features.building.length > 0 && (
+        {listing.features?.building?.length > 0 && (
           <ListingSection
             name="Building Features"
             data={listing.features.building}
           />
         )}
-        {listing.features.nearby.length > 0 && (
+        {listing.features?.nearby?.length > 0 && (
           <ListingSection
             name="Nearby Features"
             data={listing.features.nearby}
           />
         )}
-        {listing.features.other.length > 0 && (
+        {listing.features?.other?.length > 0 && (
           <ListingSection name="Other Features" data={listing.features.other} />
         )}
-        {listing.policies.length > 0 && (
+        {listing.policies?.length > 0 && (
           <ListingSection name="Policies" data={listing.policies} />
         )}
-        <Typography variant="h6">Management: {listing.management}</Typography>
+        {/* <Typography variant="h6">Management: {listing.management}</Typography> */}
 
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>

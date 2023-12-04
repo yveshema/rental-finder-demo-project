@@ -21,3 +21,4 @@ export default function AdditionalInfo() {
     </fieldset>
   );
 }
+
