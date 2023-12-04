@@ -1,30 +1,51 @@
 import { nanoid } from "nanoid";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData, Form } from "react-router-dom";
+import { Container, Box, Typography } from "@mui/material";
+
+import { searchListings } from "../api/listings";
+
+export const loader = async ({ request, params }) => {
+  let listings = [];
+  const url = new URL(request.url);
+  const { city } = params;
+  if (url.searchParams.size > 0) {
+    listings = searchListings({ city, params: url.searchParams });
+  }
+  return { listings };
+};
 
 export default function Home() {
+  const { listings } = useLoaderData();
   return (
-    <div>
-      <p>
-        <Link to="/">Home</Link>
-      </p>
-      <p>
-        <Link to="listings">Listings</Link>
-      </p>
-      <p>
-        <Link to="listings/1">Listing 1</Link>
-      </p>
-      <p>
-        <Link to={`listings/${nanoid()}/edit`}>Create Listing</Link>
-      </p>
-      <p>
-        <Link to="vancouver">Vancouver Listings</Link>
-      </p>
-      <p>
-        <Link to="vancouver/listings">Vancouver Listings</Link>
-      </p>
-      <p>
-        <Link to="vancouver/listings/:id">Vancouver Listing 1</Link>
-      </p>
-    </div>
+    <Container>
+      <Form>
+        <input
+          type="text"
+          placeholder="Search by name or address"
+          style={{
+            border: "1px solid rgba(0, 0, 0, 0.1)",
+            borderRadius: "5px",
+            padding: "10px",
+          }}
+        />
+      </Form>
+
+      <Box mb={4} mt={4}>
+        <Typography>
+          Use the search boxes to look up listings by name, street address or
+          zip code.
+        </Typography>
+      </Box>
+
+      <Box>
+        {listings.map((listing) => (
+          <p>
+            <Link
+              to={`/listings/${listing.id}`}
+            >{`${listing.name}, ${listing.address}`}</Link>
+          </p>
+        ))}
+      </Box>
+    </Container>
   );
 }

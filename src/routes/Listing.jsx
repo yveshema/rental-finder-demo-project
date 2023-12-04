@@ -53,7 +53,7 @@ export default function Listing() {
         sx={{
           aspectRatio: "1.618",
         }}
-        image={`${listing.image}`}
+        image={`/assets/${listing.image}`}
       />
       <CardContent>
         <Stack
@@ -76,9 +76,9 @@ export default function Listing() {
           </Typography>
         </Stack>
         <Typography variant="body1" mt={4}>{`${listing.address}`}</Typography>
-        <Typography variant="body2" mt={4}>
+        <Typography variant="body2" mt={4} mb={4}>
           Checkout other listings in {"  "}
-          <Link to={`${listing.address.city}/listings`}>
+          <Link to={`/${listing.address.city}/listings`}>
             {listing.address.city}
           </Link>
         </Typography>
@@ -119,29 +119,29 @@ export default function Listing() {
           <ListingSection name="Utilities" data={listing.utilities} />
         )}
 
-        {listing.features.unit.length > 0 && (
+        {listing.features?.unit?.length > 0 && (
           <ListingSection name="Unit Features" data={listing.features.unit} />
         )}
 
-        {listing.features.building.length > 0 && (
+        {listing.features?.building?.length > 0 && (
           <ListingSection
             name="Building Features"
             data={listing.features.building}
           />
         )}
-        {listing.features.nearby.length > 0 && (
+        {listing.features?.nearby?.length > 0 && (
           <ListingSection
             name="Nearby Features"
             data={listing.features.nearby}
           />
         )}
-        {listing.features.other.length > 0 && (
+        {listing.features?.other?.length > 0 && (
           <ListingSection name="Other Features" data={listing.features.other} />
         )}
-        {listing.policies.length > 0 && (
+        {listing.policies?.length > 0 && (
           <ListingSection name="Policies" data={listing.policies} />
         )}
-        <Typography variant="h6">Management: {listing.management}</Typography>
+        {/* <Typography variant="h6">Management: {listing.management}</Typography> */}
 
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
