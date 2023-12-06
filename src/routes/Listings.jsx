@@ -1,17 +1,25 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import { Box, Grid } from "@mui/material";
 import ListingCard from "../components/ListingCard";
 
-import { getListings } from "../api/listings";
+import { api } from "../api/mockAdapter";
 
 export async function loader({ request, params }) {
+  const url = new URL(request.url);
+  const searchParams = url.searchParams;
   const { city } = params;
-  const listings = getListings(city);
-  return { listings };
+  const response = await api.get("/listings", { city, params: searchParams });
+  return response.data;
 }
 
 export default function Listings() {
   const { listings } = useLoaderData();
+
+  const { state } = useNavigation();
+
+  if (state === "loading") {
+    return <progress style={{ width: "100vw" }} />;
+  }
 
   return (
     <Box>

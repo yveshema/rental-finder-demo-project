@@ -24,12 +24,11 @@ export const deleteListing = (id) => {
 };
 
 export const createListing = (data) => {
-
   //implement creating a listing
   const image = getImage(data.type);
   const listing = {
     ...data,
-    image: !data.image && image.path,
+    image: data.image ? data.image : image.path,
     verified: data.verified !== "undefined" ? data.verified : false,
     address: new Address(
       data.streetNo,
@@ -57,12 +56,13 @@ export const createListing = (data) => {
 
 export const searchListings = (search) => {
   const { city, params } = search;
-  let name, zip;
+  let name, zip, type;
   const listings = getListings(city);
 
   if (params) {
     name = params.get("name");
     zip = params.get("zip");
+    type = params.get("type");
   }
 
   if (name) {
@@ -78,6 +78,10 @@ export const searchListings = (search) => {
     return listings.filter((listing) => {
       return listing.address.zip.toLowerCase().includes(zip.toLowerCase());
     });
+  }
+
+  if (type) {
+    return listings.filter((listing) => listing.specs.type === type);
   }
 
   return [];

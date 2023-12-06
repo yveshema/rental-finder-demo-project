@@ -1,4 +1,10 @@
-import { Form, Link, redirect, useLoaderData } from "react-router-dom";
+import {
+  Form,
+  Link,
+  redirect,
+  useLoaderData,
+  useNavigation,
+} from "react-router-dom";
 
 import {
   Card,
@@ -22,23 +28,30 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ListingSection from "../components/ListingSection";
 
 import { getListing, deleteListing } from "../api/listings";
+import { api } from "../api/mockAdapter";
+import { normalize } from "../utils/functions";
 
 export async function loader({ params }) {
   const { id } = params;
-  const listing = getListing(id);
-
-  return { listing };
+  const response = await api.get("/listing", { id });
+  return response.data;
 }
 
 export async function action({ params }) {
   const { id } = params;
-  deleteListing(id);
+  await api.delete("/listings", { id });
   return redirect("/listings");
 }
 
 export default function Listing() {
   const { listing } = useLoaderData();
   const verified = listing.verified;
+
+  const { state } = useNavigation();
+
+  if (state === "loading") {
+    return <progress style={{ width: "100vw" }} />;
+  }
 
   return (
     <Card
@@ -75,10 +88,14 @@ export default function Listing() {
             </Link>
           </Typography>
         </Stack>
-        <Typography variant="body1" mt={4}>{`${listing.address}`}</Typography>
+        <Typography variant="body1" mt={4}>
+          {listing.address.streetNo} {listing.address.streetName},{" "}
+          {listing.address.city}, {listing.address.zip}{" "}
+          {listing.address.province}
+        </Typography>
         <Typography variant="body2" mt={4} mb={4}>
           Checkout other listings in {"  "}
-          <Link to={`/${listing.address.city}/listings`}>
+          <Link to={`/${normalize(listing.address.city)}/listings`}>
             {listing.address.city}
           </Link>
         </Typography>
@@ -173,7 +190,9 @@ export default function Listing() {
             flexWrap="wrap"
             spacing={4}
           >
-            <Button variant="outlined">Edit</Button>
+            <Button variant="outlined" component={Link} to="edit">
+              Edit
+            </Button>
             <Form
               method="post"
               action="delete"
